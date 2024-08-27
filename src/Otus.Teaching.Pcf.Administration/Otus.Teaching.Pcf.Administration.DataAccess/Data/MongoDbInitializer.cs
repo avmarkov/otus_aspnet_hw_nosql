@@ -19,13 +19,13 @@ namespace Otus.Teaching.Pcf.Administration.DataAccess.Data
         {
             foreach (var role in FakeDataFactory.Roles)
             {
-                //if (await _roleCollection.GetByIdAsync(role.Id) != null) continue;
+                if (await _roleCollection.GetByIdAsync(role.Id) != null) continue;
                 await _roleCollection.AddAsync(role);
             }
 
             foreach (var employee in FakeDataFactory.Employees)
             {
-                //if (await _employeeCollection.GetByIdAsync(employee.Id) != null) continue;
+                if (await _employeeCollection.GetByIdAsync(employee.Id) != null) continue;
                 await _employeeCollection.AddAsync(employee);
             }
         }
